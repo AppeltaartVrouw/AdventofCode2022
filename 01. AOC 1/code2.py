@@ -13,8 +13,7 @@ def code():
     max_calo = []
     for bundel in elven:
         max_calo.append(sum(bundel))
-    max_calo.sort()
-    return sum(max_calo[-3:])
+    return sum(sorted(max_calo)[-3:])
 
 
 if __name__ == '__main__':
