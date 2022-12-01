@@ -11,14 +11,10 @@ def code():
                 continue
             calo_groep.append(int(voedsel))
     max_calo = []
-    top3 = 0
     for bundel in elven:
         max_calo.append(sum(bundel))
-    for i in range(3):
-        hoogste = max(max_calo)
-        top3 += hoogste
-        max_calo.remove(hoogste)
-    return top3
+    max_calo.sort()
+    return sum(max_calo[-3:])
 
 
 if __name__ == '__main__':
