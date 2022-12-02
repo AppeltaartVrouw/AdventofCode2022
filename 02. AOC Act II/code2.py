@@ -1,16 +1,16 @@
 def code():
-    eind_res = {('A', 'X'): 0+3,
-                ('C', 'X'): 0+2,
-                ('B', 'X'): 0+1,
-                ('B', 'Y'): 3+2,
-                ('A', 'Y'): 3+1,
-                ('C', 'Y'): 3+3,
-                ('C', 'Z'): 6+1,
-                ('B', 'Z'): 6+3,
-                ('A', 'Z'): 6+2,}
+    eind_res = {'A X': 0 + 3,
+                'C X': 0 + 2,
+                'B X': 0 + 1,
+                'B Y': 3 + 2,
+                'A Y': 3 + 1,
+                'C Y': 3 + 3,
+                'C Z': 6 + 1,
+                'B Z': 6 + 3,
+                'A Z': 6 + 2}
     with open('input.txt', 'r') as bestand:
-        return sum([eind_res[tuple(x.split())] for
-                    x in bestand.read().rstrip('\n').split('\n')])
+        return sum(eind_res[x] for x in
+                   bestand.read().rstrip('\n').split('\n'))
 
 
 if __name__ == '__main__':
