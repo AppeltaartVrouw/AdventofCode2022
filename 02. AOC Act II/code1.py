@@ -13,12 +13,8 @@ def code():
            'Z': 3}
     with open('input.txt', 'r') as bestand:
         sps_tour = bestand.read().rstrip('\n').split('\n')
-    tal = 0
-    for sps in sps_tour:
-        sps = tuple(sps.split())
-        print(sps)
-        tal += eind_res.get(sps) + win.get(sps[-1])
-    return tal
+    return sum([eind_res[tuple(x.split())] + \
+                win[x[-1]] for x in sps_tour])
 
 
 if __name__ == '__main__':
