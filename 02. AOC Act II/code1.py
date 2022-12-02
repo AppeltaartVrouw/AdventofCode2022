@@ -9,8 +9,8 @@ def code():
                 ('B', 'X'): 0 + 1,
                 ('C', 'Y'): 0 + 2}
     with open('input.txt', 'r') as bestand:
-        sps_tour = bestand.read().rstrip('\n').split('\n')
-    return sum([eind_res[tuple(x.split())] for x in sps_tour])
+        return sum([eind_res[tuple(x.split())] for
+                    x in bestand.read().rstrip('\n').split('\n')])
 
 
 if __name__ == '__main__':
