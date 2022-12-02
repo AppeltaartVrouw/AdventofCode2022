@@ -10,11 +10,7 @@ def code():
                 ('A', 'Z'): 6+2,}
     with open('input.txt', 'r') as bestand:
         sps_tour = bestand.read().rstrip('\n').split('\n')
-    tal = 0
-    for sps in sps_tour:
-        sps_tup = tuple(sps.split())
-        tal += eind_res.get(sps_tup)
-    return tal
+    return sum([eind_res[tuple(x.split())] for x in sps_tour])
 
 
 if __name__ == '__main__':
