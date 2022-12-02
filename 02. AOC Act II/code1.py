@@ -8,9 +8,6 @@ def code():
                 ('A', 'Z'): 0 + 3,
                 ('B', 'X'): 0 + 1,
                 ('C', 'Y'): 0 + 2}
-    win = {'X': 1,
-           'Y': 2,
-           'Z': 3}
     with open('input.txt', 'r') as bestand:
         sps_tour = bestand.read().rstrip('\n').split('\n')
     return sum([eind_res[tuple(x.split())] for x in sps_tour])
