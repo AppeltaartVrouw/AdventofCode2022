@@ -3,13 +3,11 @@ def parsen():
         inhoud = bestand.read()
     kratten = {}
     kratten_index, bew_instr = inhoud.split('\n\n')
-    kol_num = int(kratten_index.split('\n')[-1][-1])
+    kol_num = int(kratten_index.split('\n')[-1].split()[-1])
     for i in range(1, kol_num+1):
         kratten[i] = []
     for rij in kratten_index.split('\n')[::-1][1:]:
-        for kolom, krat in enumerate(range(-1, len(rij)+1, 4)):
-            if krat < 0:
-                continue
+        for kolom, krat in enumerate(range(3, len(rij)+1, 4), start=1):
             letter = rij[krat-3:krat][1]
             if letter != ' ':
                 kratten[kolom].append(rij[krat-3:krat][1])
